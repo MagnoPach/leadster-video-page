@@ -18,10 +18,9 @@ export default function HeroSection() {
           <Image src={AssetHeader} alt="" className="leadster-decoration" />
         </S.HeroTitleContainer>
 
-        <p className="font-bold text-zinc-700 text-[9px] sm:text-xs md:text-sm lg:text-base">
-          Conheça as estratégias que{" "}
-          <strong className="font-extrabold text-black">mudaram o jogo</strong>{" "}
-          e como aplicá-las no seu negócio
+        <p className="hero-footer">
+          Conheça as estratégias que <strong>mudaram o jogo</strong> e como
+          aplicá-las no seu negócio
         </p>
       </div>
     </S.Section>

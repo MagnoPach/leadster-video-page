@@ -14,10 +14,31 @@ export const Section = styled.section`
     align-items: center;
     gap: 4px;
     margin: 0 auto;
+
+    .hero-footer {
+      max-width: 278px;
+      font-family: "Plus Jakarta Sans";
+      font-size: 12px;
+      font-weight: 500;
+      color: #1c1c1c;
+      text-align: center;
+
+      strong {
+        font-weight: 800;
+      }
+    }
   }
 
   @media (min-width: 768px) {
-    padding: 96px 0;
+    padding: 96px 0 130px;
+
+    .container {
+      .hero-footer {
+        max-width: none;
+        font-size: 16px;
+        padding-top: 8px;
+      }
+    }
   }
 `;
 
@@ -26,7 +47,7 @@ export const Disclaimer = styled.span`
   border-radius: 20px 20px 20px 6px;
   padding: 4px 12px;
   font-family: "Plus Jakarta Sans";
-  font-size: 10px;
+  font-size: 8px;
   font-weight: 800;
   color: #2c83fb;
   text-transform: uppercase;
@@ -48,14 +69,14 @@ export const HeroTitleContainer = styled.div`
 
   h1 {
     font-family: "Plus Jakarta Sans";
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     text-align: center;
     color: #1c1c1c;
-    padding: 16px 0;
+    padding: 16px 20px;
 
     strong {
-      font-size: 38px;
+      font-size: 36px;
       color: #2c83fb;
       font-weight: 700;
     }
@@ -63,26 +84,26 @@ export const HeroTitleContainer = styled.div`
 
   .leadster-decoration {
     position: absolute;
-    top: 60px;
-    right: -16px;
-    width: 30px;
+    top: 56px;
+    right: 8px;
+    width: 24px;
     object-fit: contain;
   }
 
   @media (min-width: 768px) {
     h1 {
       font-size: 38px;
-      padding: 16px 0 20px;
+      padding: 16px 30px 30px;
 
       strong {
-        font-size: 72px;
-        line-height: 68px;
+        font-size: 78px;
+        line-height: 72px;
       }
     }
     .leadster-decoration {
       position: absolute;
-      top: 86px;
-      right: -20px;
+      top: 90px;
+      right: 16px;
       width: 40px;
     }
   }

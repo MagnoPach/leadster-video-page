@@ -7,11 +7,7 @@ import * as S from "./styles";
 export default function Header() {
   return (
     <S.HeaderContainer>
-      <Image
-        src={Logo}
-        alt="Logo Leadster"
-        className="w-32 sm:w-44 h-7 sm:h-9"
-      />
+      <Image src={Logo} alt="Logo Leadster" />
     </S.HeaderContainer>
   );
 }
