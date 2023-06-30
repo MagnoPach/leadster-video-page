@@ -2,7 +2,7 @@ import React from "react";
 
 export const orderOptions = [
   {
-    value: "date",
+    value: "publishedAt",
     label: "Data de Publicação",
   },
   {

@@ -1,4 +1,16 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const heroDisplay = keyframes`
+  0% { 
+    opacity: 0;
+    transform: translateX(-200px); 
+  }
+
+  100% { 
+    opacity: 1;
+    transform: translateX(0px); 
+  }
+`;
 
 export const Section = styled.section`
   width: 100%;
@@ -14,6 +26,8 @@ export const Section = styled.section`
     align-items: center;
     gap: 4px;
     margin: 0 auto;
+    animation: ${heroDisplay} 1s;
+    transition: 0.5s;
 
     .hero-footer {
       max-width: 278px;
@@ -66,6 +80,7 @@ export const HeroTitleContainer = styled.div`
   align-items: center;
   border-bottom: 1px solid #dcdcdc;
   position: relative;
+  margin: 0 20px;
 
   h1 {
     font-family: "Plus Jakarta Sans";
@@ -73,7 +88,7 @@ export const HeroTitleContainer = styled.div`
     font-weight: 600;
     text-align: center;
     color: #1c1c1c;
-    padding: 16px 20px;
+    padding: 16px 0px;
 
     strong {
       font-size: 36px;
@@ -85,7 +100,7 @@ export const HeroTitleContainer = styled.div`
   .leadster-decoration {
     position: absolute;
     top: 56px;
-    right: 8px;
+    right: -10px;
     width: 24px;
     object-fit: contain;
   }

@@ -1,3 +1,4 @@
+import CompareSection from "../components/CompareSection/CompareSection";
 import Header from "../components/Header/Header";
 import HeroSection from "../components/HeroSection/HeroSection";
 import VideosSection from "../components/VideosSection/VideosSection";
@@ -8,6 +9,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <VideosSection />
+      <CompareSection />
     </>
   );
 }

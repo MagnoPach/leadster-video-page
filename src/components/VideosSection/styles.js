@@ -6,17 +6,29 @@ export const Section = styled.section`
 
   .container {
     width: 100%;
-    max-width: 1032px;
+    max-width: 320px;
     padding: 0 20px;
     margin: 0 auto;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 574px) {
+    .container {
+      max-width: 558px;
+    }
+  }
+  @media (min-width: 709px) {
+    .container {
+      max-width: 698px;
+    }
+  }
+  @media (min-width: 1050px) {
+    .container {
+      max-width: 1032px;
+    }
   }
 `;
 
 export const FilterWrapper = styled.div`
-  /* flex flex-col gap-3 justify-center lg:flex-row items-center py-5 border-b border-slate-300 */
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -30,21 +42,27 @@ export const FilterWrapper = styled.div`
     align-items: center;
 
     label {
+      width: auto;
       font-family: "Plus Jakarta Sans";
-      font-size: 13px;
+      font-size: 10px;
       font-weight: 700;
       margin-right: 8px;
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 640px) {
     flex-direction: row;
+
+    .select-wrapper {
+      label {
+        width: 86px;
+        font-size: 13px;
+      }
+    }
   }
 `;
 
 export const GridContainer = styled.div`
-  /* w-full max-w-[1320px] m-auto grid grid-cols-auto sm:grid-cols-2 md:grid-cols-3 justify-center items-center gap-5 py-12 border-b border-slate-300 */
-  position: "relative";
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, 250px);
@@ -56,5 +74,47 @@ export const GridContainer = styled.div`
 
   @media (min-width: 710px) {
     grid-template-columns: repeat(auto-fill, 320px);
+  }
+`;
+
+export const PaginationWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+
+  .page-text {
+    font-family: "Plus Jakarta Sans";
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin-left: 16px;
+    color: #1c1c1c;
+  }
+`;
+
+export const PaginationButtons = styled.button`
+  background-color: transparent;
+  font-family: "Plus Jakarta Sans";
+  font-size: 16px;
+  font-weight: ${(props) => (props.isActive ? 800 : 600)};
+  color: ${(props) => (props.isActive ? "#2c83fb" : "#1c1c1c")};
+  border: ${(props) => (props.isActive ? "1px solid #2c83fb" : "none")};
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 6px 12px;
+  transition: 0.2s;
+
+  &:hover {
+    color: ${(props) => (props.isActive ? "#1c1c1c" : "#2c83fb")};
+    opacity: ${(props) => (props.isActive ? 0.8 : 1)};
+    border-color: ${(props) => (props.isActive ? "#1c1c1c" : "#2c83fb")};
   }
 `;
