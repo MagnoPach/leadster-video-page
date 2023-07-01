@@ -1,66 +1,59 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { MutableRefObject, useContext, useRef } from "react";
 import Select from "react-select";
 
-import Filters from "../Filters/Filters";
-import VideoCard from "../VideoCard/VideoCard";
-import { VideosContext } from "../../Context/VideosContext";
-import * as S from "./styles";
+import Filters from "../../Filters/Filters";
+import VideoCard from "../../VideoCard/VideoCard";
+import { VideosContext } from "../../../Context/VideosContext";
 import {
-  Option,
   orderOptions,
   selectStyles,
-} from "../../utils/react-select-options";
-import { handleDelay } from "../../utils/util-methods";
+  orderOptionsModel,
+} from "../../../utils/react-select-options";
+import { handleDelay, handleScrollTop } from "../../../utils/util-methods";
+import * as S from "./styles";
 
 export default function VideosSection() {
-  const containerRef = useRef(null);
-  const gridRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement | null>(
+    null
+  ) as MutableRefObject<HTMLDivElement>;
+  const gridRef = useRef<HTMLDivElement | null>(
+    null
+  ) as MutableRefObject<HTMLDivElement>;
   const {
     videosDisplay,
     selectedOrder,
     setSelectedOrder,
     currentPageIndex,
     setCurrentPageIndex,
-    currentCategory,
   } = useContext(VideosContext);
 
   const currentSelectedOption = getCurrentSelectedOption();
 
-  useEffect(() => {
-    handleScrollTop();
-  }, [selectedOrder, currentCategory, currentPageIndex]);
-
-  function getCurrentSelectedOption() {
+  function getCurrentSelectedOption(): number {
     return orderOptions.findIndex(
       (option) => option["value"] === selectedOrder
     );
   }
 
-  async function handleSetSelectedOption(option) {
+  async function handleSetSelectedOption(
+    option: orderOptionsModel
+  ): Promise<void> {
     handleGridFade();
     await handleDelay(200);
     setSelectedOrder(option["value"]);
   }
 
-  async function handleSetCurrentPageIndex(pageIndex) {
+  async function handleSetCurrentPageIndex(pageIndex: number): Promise<void> {
     handleGridFade();
     await handleDelay(200);
     setCurrentPageIndex(pageIndex);
   }
 
-  function handleScrollTop() {
-    window.scrollTo({
-      top: containerRef.current.offsetTop - 200,
-      behavior: "smooth",
-    });
-  }
-
-  function handleGridFade() {
-    gridRef.current.style.opacity = 0;
-    gridRef.current.style.animationFillMode = "forwards";
-    setTimeout(() => {
-      gridRef.current.style.opacity = 1;
-    }, 200);
+  async function handleGridFade() {
+    handleScrollTop(containerRef);
+    gridRef.current.style.opacity = "0";
+    await handleDelay(200);
+    gridRef.current.style.opacity = "1";
   }
 
   return (
@@ -77,7 +70,6 @@ export default function VideosSection() {
               isClearable={false}
               defaultValue={orderOptions[currentSelectedOption]}
               closeMenuOnSelect={true}
-              components={{ Option }}
               onChange={(event) => handleSetSelectedOption(event)}
               styles={selectStyles}
               options={orderOptions}
@@ -92,10 +84,10 @@ export default function VideosSection() {
         <S.PaginationWrapper>
           <p className="page-text">Página</p>
           <div className="buttons">
-            {videosDisplay.map((page, index) => (
+            {videosDisplay.map((_, index) => (
               <S.PaginationButtons
                 key={index}
-                isActive={index === currentPageIndex}
+                isactive={String(index === currentPageIndex)}
                 onClick={() => handleSetCurrentPageIndex(index)}
               >
                 {index + 1}

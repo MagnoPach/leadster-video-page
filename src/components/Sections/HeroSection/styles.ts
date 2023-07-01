@@ -1,3 +1,4 @@
+"use client";
 import styled, { keyframes } from "styled-components";
 
 const heroDisplay = keyframes`
@@ -34,7 +35,7 @@ export const Section = styled.section`
       font-family: "Plus Jakarta Sans";
       font-size: 12px;
       font-weight: 500;
-      color: #1c1c1c;
+      color: #2c3e50;
       text-align: center;
 
       strong {
@@ -87,7 +88,7 @@ export const HeroTitleContainer = styled.div`
     font-size: 18px;
     font-weight: 600;
     text-align: center;
-    color: #1c1c1c;
+    color: #2c3e50;
     padding: 16px 0px;
 
     strong {

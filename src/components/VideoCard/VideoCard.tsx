@@ -1,8 +1,8 @@
-import React from "react";
-import Image from "next/image";
-import { Play } from "@phosphor-icons/react";
+import React from 'react';
+import Image from 'next/image';
+import { Play } from 'phosphor-react';
 
-import * as S from "./styles";
+import * as S from './styles';
 
 export default function VideoCard({ data }) {
   return (

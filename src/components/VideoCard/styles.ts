@@ -21,7 +21,7 @@ export const Container = styled.button`
     font-size: 12px;
     font-weight: 700;
     text-align: left;
-    color: #1c1c1c;
+    color: #2c3e50;
     padding: 16px 20px;
   }
 
