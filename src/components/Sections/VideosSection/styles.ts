@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import { activeButtonProps } from '../../../Models/Models';
+import { activeButtonProps } from "../../../Models/Models";
 
-export const Section = styled('section')`
+export const Section = styled("section")`
   width: 100%;
   padding: 48px 0;
 
@@ -30,7 +30,7 @@ export const Section = styled('section')`
   }
 `;
 
-export const FilterWrapper = styled('div')`
+export const FilterWrapper = styled("div")`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -45,7 +45,7 @@ export const FilterWrapper = styled('div')`
 
     label {
       width: auto;
-      font-family: 'Plus Jakarta Sans';
+      font-family: "Plus Jakarta Sans";
       font-size: 10px;
       font-weight: 700;
       margin-right: 8px;
@@ -64,7 +64,7 @@ export const FilterWrapper = styled('div')`
   }
 `;
 
-export const GridContainer = styled('div')`
+export const GridContainer = styled("div")`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, 250px);
@@ -79,7 +79,7 @@ export const GridContainer = styled('div')`
   }
 `;
 
-export const PaginationWrapper = styled('div')`
+export const PaginationWrapper = styled("div")`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -87,7 +87,7 @@ export const PaginationWrapper = styled('div')`
   margin-top: 16px;
 
   .page-text {
-    font-family: 'Plus Jakarta Sans';
+    font-family: "Plus Jakarta Sans";
     font-size: 16px;
     font-weight: 600;
   }
@@ -102,23 +102,23 @@ export const PaginationWrapper = styled('div')`
   }
 `;
 
-export const PaginationButtons = styled('button')<activeButtonProps>`
+export const PaginationButtons = styled("button")<activeButtonProps>`
   background-color: transparent;
-  font-family: 'Plus Jakarta Sans';
+  font-family: "Plus Jakarta Sans";
   font-size: 16px;
-  font-weight: ${(props) => (props.isactive === 'true' ? 800 : 600)};
-  color: ${(props) => (props.isactive === 'true' ? '#2c83fb' : '#2c3e50')};
+  font-weight: ${(props) => (props.$isactive === "true" ? 800 : 600)};
+  color: ${(props) => (props.$isactive === "true" ? "#2c83fb" : "#2c3e50")};
   border: ${(props) =>
-    props.isactive === 'true' ? '1px solid #2c83fb' : 'none'};
+    props.$isactive === "true" ? "1px solid #2c83fb" : "none"};
   border-radius: 4px;
   cursor: pointer;
   padding: 6px 12px;
   transition: 0.2s;
 
   &:hover {
-    color: ${(props) => (props.isactive === 'true' ? '#2c3e50' : '#2c83fb')};
-    opacity: ${(props) => (props.isactive === 'true' ? 0.8 : 1)};
+    color: ${(props) => (props.$isactive === "true" ? "#2c3e50" : "#2c83fb")};
+    opacity: ${(props) => (props.$isactive === "true" ? 0.8 : 1)};
     border-color: ${(props) =>
-      props.isactive === 'true' ? '#2c3e50' : '#2c83fb'};
+      props.$isactive === "true" ? "#2c3e50" : "#2c83fb"};
   }
 `;

@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
-import CompareSection from '../components/Sections/CompareSection/CompareSection';
-import Header from '../components/Header/Header';
-import HeroSection from '../components/Sections/HeroSection/HeroSection';
-import VideosSection from '../components/Sections/VideosSection/VideosSection';
+import { useEffect, useState } from "react";
+import CompareSection from "../components/Sections/CompareSection/CompareSection";
+import Footer from "src/components/Footer/Footer";
+import Header from "../components/Header/Header";
+import HeroSection from "../components/Sections/HeroSection/HeroSection";
+import VideosSection from "../components/Sections/VideosSection/VideosSection";
 
-import { handleDelay } from '../utils/util-methods';
+import { handleDelay } from "../utils/util-methods";
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
@@ -25,6 +26,7 @@ export default function Home() {
       <HeroSection />
       <VideosSection />
       <CompareSection />
+      <Footer />
     </>
   );
 }

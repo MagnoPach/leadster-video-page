@@ -87,7 +87,7 @@ export default function VideosSection() {
             {videosDisplay.map((_, index) => (
               <S.PaginationButtons
                 key={index}
-                isactive={String(index === currentPageIndex)}
+                $isactive={String(index === currentPageIndex)}
                 onClick={() => handleSetCurrentPageIndex(index)}
               >
                 {index + 1}

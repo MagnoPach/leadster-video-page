@@ -12,6 +12,13 @@ export default createGlobalStyle`
     vertical-align: baseline;
   }
 
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
 
   button {
       cursor: pointer;

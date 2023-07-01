@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext } from "react";
 
-import { VideosContext } from '../../Context/VideosContext';
-import { handleDelay } from '../../utils/util-methods';
-import * as S from './styles';
+import { VideosContext } from "../../Context/VideosContext";
+import { handleDelay } from "../../utils/util-methods";
+import * as S from "./styles";
 
 interface FiltersProps {
   handleFade: () => void;
@@ -16,7 +16,7 @@ export default function Filters({ handleFade }: FiltersProps) {
     handleFade();
     await handleDelay(200);
     if (category === currentCategory) {
-      setCurrentCategory('');
+      setCurrentCategory("");
     } else {
       setCurrentCategory(category);
     }
@@ -27,7 +27,7 @@ export default function Filters({ handleFade }: FiltersProps) {
       {uniqueCategorys?.map((category) => (
         <S.Button
           key={category}
-          isactive={String(category === currentCategory)}
+          $isactive={String(category === currentCategory)}
           onClick={() => handleSetCurrentCategory(category)}
         >
           {category}

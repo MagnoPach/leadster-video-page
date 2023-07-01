@@ -1,16 +1,16 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useEffect, useState } from "react";
 
-import videosDataJson from '../../data.json';
-import { VideoContextProps, VideoDataModel } from '../Models/Models';
+import videosDataJson from "../../data.json";
+import { VideoContextProps, VideoDataModel } from "../Models/Models";
 
 const paginationLimit = 9;
 
 const initialContextValue = {
   videosDisplay: [],
   uniqueCategorys: [],
-  selectedOrder: 'publishedAt',
+  selectedOrder: "publishedAt",
   setSelectedOrder: (value: string) => value,
-  currentCategory: '',
+  currentCategory: "",
   setCurrentCategory: (value: string) => value,
   currentPageIndex: 0,
   setCurrentPageIndex: (value: number) => value,
@@ -18,17 +18,17 @@ const initialContextValue = {
 
 export const VideosContext =
   createContext<VideoContextProps>(initialContextValue);
-VideosContext.displayName = '';
+VideosContext.displayName = "";
 
 export const VideosProvider = ({ children }) => {
   const [videosData, setVideosData] = useState([]);
-  const [selectedOrder, setSelectedOrder] = useState('publishedAt');
-  const [currentCategory, setCurrentCategory] = useState('');
+  const [selectedOrder, setSelectedOrder] = useState("publishedAt");
+  const [currentCategory, setCurrentCategory] = useState("");
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
 
   const videosDisplay = videosData && getVideoByFilters(videosData);
   const uniqueCategorys = [
-    ...new Set(videosData?.map((video) => video['category'])),
+    ...new Set(videosData?.map((video) => video["category"])),
   ];
 
   useEffect(() => {
@@ -49,7 +49,7 @@ export const VideosProvider = ({ children }) => {
 
     if (currentCategory.length > 0) {
       const VideoFilteredByCategory = finalVideoData.filter((video) =>
-        currentCategory.includes(video['category']),
+        currentCategory.includes(video["category"])
       );
       finalVideoData = [...VideoFilteredByCategory];
     }
@@ -58,7 +58,7 @@ export const VideosProvider = ({ children }) => {
 
     const splitVideoList = splitVideoListForPagination(
       finalVideoData,
-      paginationLimit,
+      paginationLimit
     );
 
     const splitedVideoData: VideoDataModel[][] = [...splitVideoList];
@@ -67,26 +67,28 @@ export const VideosProvider = ({ children }) => {
   }
 
   function splitVideoListForPagination(
-    videosList,
-    maxLength,
+    videosList: VideoDataModel[],
+    maxLength: number
   ): VideoDataModel[][] {
     return Array.from(
       { length: Math.ceil(videosList.length / maxLength) },
       (_, index) =>
-        videosList.slice(index * maxLength, index * maxLength + maxLength),
+        videosList.slice(index * maxLength, index * maxLength + maxLength)
     );
   }
 
-  function orderList(videoList, param): any {
+  function orderList(
+    videoList: VideoDataModel[],
+    param: string
+  ): VideoDataModel[] {
     videoList.sort((a, b) => {
-      a = a[param];
-      b = b[param];
+      const aAtt = a[param];
+      const bAtt = b[param];
 
-      return b.localeCompare(a);
+      return bAtt.localeCompare(aAtt);
     });
+    return videoList;
   }
-
-  console.log(videosDisplay);
 
   return (
     <VideosContext.Provider

@@ -19,6 +19,16 @@ export interface VideoDataModel {
   category: string;
 }
 
+export interface FooterColumnsModel {
+  columnTitle: string;
+  links: FooterLinksModel[];
+}
+
+export interface FooterLinksModel {
+  label: string;
+  url: string;
+}
+
 export interface activeButtonProps {
-  isactive: string;
+  $isactive: string;
 }
