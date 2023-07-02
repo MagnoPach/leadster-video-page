@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
-import { VideosContext } from "../../../store/VideosContext";
-import { handleDelay } from "../../../utils/util-methods";
+import { VideosContext } from "../../store/VideosContext";
+import { handleDelay } from "../../utils/util-methods";
 import * as S from "./styles";
 
 interface FiltersProps {
