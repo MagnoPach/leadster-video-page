@@ -13,18 +13,16 @@
     "incremental": true,
     "esModuleInterop": true,
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
     "isolatedModules": true
   },
   "include": [
-    "src",
-    "src/models/**/*",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "next.config.js",
-    "public"
+    "src/models/**/*"
   ],
   "exclude": ["node_modules"]
 }
