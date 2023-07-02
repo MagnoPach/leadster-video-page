@@ -5,10 +5,7 @@ import { DownloadButtonProps } from "src/models/Models";
 import { downloadButtonStyle } from "src/utils/default-values";
 import * as S from "./styles";
 
-export default function DownloadButton({
-  buttonType,
-  file,
-}: DownloadButtonProps) {
+export default function DownloadButton({ buttonType }: DownloadButtonProps) {
   const buttonStyles = downloadButtonStyle[buttonType];
 
   return (

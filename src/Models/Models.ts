@@ -53,7 +53,6 @@ export interface VideoCardProps {
 
 export interface DownloadButtonProps {
   buttonType: string;
-  file: string;
 }
 
 export interface activeButtonProps {

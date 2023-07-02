@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import ReactPlayer from "react-player";
 import { X } from "phosphor-react";
 
-import DownloadButton from "src/components/DownloadButton/DownloadButton";
+import DownloadButton from "src/components/Actions/DownloadButton/DownloadButton";
 import { VideosContext } from "../../../store/VideosContext";
 import { playerConfig } from "src/utils/default-values";
 import * as S from "./styles";
@@ -56,18 +56,9 @@ export default function VideoModal() {
             </S.Text>
             <S.FooterTitle>Download</S.FooterTitle>
             <S.Downloads>
-              <DownloadButton
-                buttonType="spread_sheet"
-                file={seletedVideoData["thumb"]}
-              />
-              <DownloadButton
-                buttonType="document"
-                file={seletedVideoData["thumb"]}
-              />
-              <DownloadButton
-                buttonType="presentation"
-                file={seletedVideoData["thumb"]}
-              />
+              <DownloadButton buttonType="spread_sheet" />
+              <DownloadButton buttonType="document" />
+              <DownloadButton buttonType="presentation" />
             </S.Downloads>
           </S.Footer>
         </S.Modal>
