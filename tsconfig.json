@@ -15,8 +15,20 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "paths": {
+      "@static/*": ["./public/static/*"],
+      "@generated/*": ["./src/__generated__/*"],
+      "@*": ["./src*"]
+    }
   },
-  "include": ["src", "next-env.d.ts", "src/**/*.ts", "src/**/*.tsx"],
+  "include": [
+    "src",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "next.config.js",
+    "public"
+  ],
   "exclude": ["node_modules"]
 }
