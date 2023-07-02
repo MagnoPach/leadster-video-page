@@ -5,13 +5,12 @@ import { activeButtonProps } from "../../../models/Interfaces";
 export const Container = styled.div`
   width: 100%;
   display: flex;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 12px;
   margin-bottom: 20px;
 
   @media (min-width: 640px) {
-    justify-content: flex-start;
     margin-bottom: 0;
     margin-right: 16px;
   }

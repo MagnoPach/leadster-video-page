@@ -16,7 +16,7 @@ const heroDisplay = keyframes`
 export const Section = styled.section`
   width: 100%;
   background-color: #f0f8ff;
-  padding: 40px 0;
+  padding: 80px 0 100px;
 
   .container {
     width: 100%;
@@ -85,14 +85,15 @@ export const HeroTitleContainer = styled.div`
 
   h1 {
     font-family: "Plus Jakarta Sans";
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 600;
     text-align: center;
     color: #2c3e50;
     padding: 16px 0px;
 
     strong {
-      font-size: 36px;
+      font-size: 38px;
+      white-space: nowrap;
       color: #2c83fb;
       font-weight: 700;
     }
