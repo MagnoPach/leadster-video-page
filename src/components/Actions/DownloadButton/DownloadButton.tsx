@@ -1,7 +1,7 @@
 import React from "react";
 import { CloudArrowDown } from "phosphor-react";
 
-import { DownloadButtonProps } from "src/models/Models";
+import { DownloadButtonProps } from "../../../../src/models/Models";
 import { downloadButtonStyle } from "src/utils/default-values";
 import * as S from "./styles";
 
