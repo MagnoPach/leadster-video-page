@@ -46,7 +46,7 @@ export const ContainerWrapper = styled.div`
   }
 `;
 
-export const Container = styled.div`
+export const Modal = styled.div`
   position: relative;
   z-index: 100;
   width: 90vw;
@@ -54,18 +54,37 @@ export const Container = styled.div`
   padding: 20px 0;
   background-color: #fff;
   border-radius: 8px;
+  border-top: 3px solid #007eff;
 
   @media (min-width: 768px) {
-    max-width: 720px;
+    max-width: 520px;
     padding: 30px 0;
-    box-shadow: 0 0 30px #2f04164f;
+    box-shadow: 0 0 30px #2c3e504f;
   }
 `;
 
 export const Header = styled.div`
+  max-width: 346px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 20px;
+  margin: 0 auto;
+`;
+
+export const Footer = styled.div`
+  width: 100%;
+  padding: 20px 20px 0;
+`;
+
+export const Downloads = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 16px 8px;
+  margin-top: 12px;
 `;
 
 export const CloseButtonWrapper = styled.button`
@@ -73,20 +92,51 @@ export const CloseButtonWrapper = styled.button`
   position: absolute;
   top: 2px;
   right: 2px;
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
+
+  @media (min-width: 460px) {
+    width: 44px;
+    height: 44px;
+  }
 `;
 
-export const Title = styled.p`
+export const ModalTitle = styled.p`
+  font-family: "Plus Jakarta Sans";
   font-weight: 700;
   font-size: 15px;
-  text-transform: uppercase;
-  color: #2f0416;
+  text-align: center;
+  color: #2c3e50;
+  padding-top: 16px;
+  margin-bottom: 20px;
+
+  span {
+    color: #2c83fb;
+  }
+
+  @media (min-width: 460px) {
+    padding-top: 0;
+    font-size: 16px;
+  }
+`;
+
+export const FooterTitle = styled.p`
+  font-family: "Plus Jakarta Sans";
+  font-size: 13px;
+  font-weight: 800;
+  color: #2c3e50;
+  border-bottom: 1px solid #dcdcdc;
+  padding-bottom: 8px;
   margin-bottom: 8px;
 `;
 
 export const Text = styled.p`
-  font-size: 14px;
-  color: #2f0416;
-  margin-bottom: 6px;
+  font-family: "Plus Jakarta Sans";
+  font-size: 12px;
+  font-weight: 600;
+  color: #2c3e50;
+  max-height: 62px;
+  overflow: auto;
+  padding-right: 8px;
+  margin-bottom: 20px;
 `;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { activeButtonProps } from "../../../Models/Models";
+import { activeButtonProps } from "../../../models/Models";
 
 export const Section = styled("section")`
   width: 100%;
@@ -37,7 +37,7 @@ export const FilterWrapper = styled("div")`
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid #dcdcdc;
-  padding-bottom: 8px;
+  padding-bottom: 16px;
 
   .select-wrapper {
     display: flex;

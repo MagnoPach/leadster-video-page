@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 const leftDisplay = keyframes`
   0% { 
@@ -135,7 +135,12 @@ export const ButtonWrapper = styled.div`
     margin-top: 16px;
   }
 
-  @media (min-width: 992px) {
+  @media (min-width: 460px) {
+    .rd-seal {
+      margin-left: 16px;
+    }
+  }
+  @media (min-width: 472px) {
     .rd-seal {
       margin-top: 0;
       margin-left: 16px;
@@ -158,7 +163,7 @@ export const DemonstrationFooter = styled.div`
 
   .no-card-text,
   .rating-text {
-    font-family: 'Plus Jakarta Sans';
+    font-family: "Plus Jakarta Sans";
     font-size: 15px;
     font-weight: 500;
     text-align: left;
@@ -187,7 +192,7 @@ export const DemonstationButton = styled.button`
   justify-content: center;
   box-shadow: 0 20px 30px 0 rgba(12, 0, 46, 0.1);
   background-color: #007dff;
-  font-family: 'Plus Jakarta Sans';
+  font-family: "Plus Jakarta Sans";
   font-size: 16px;
   font-weight: 600;
   color: #fff;
@@ -220,7 +225,7 @@ export const DemonstationButton = styled.button`
 
 export const H2 = styled.h2`
   max-width: 450px;
-  font-family: 'Plus Jakarta Sans';
+  font-family: "Plus Jakarta Sans";
   font-size: 28px;
   font-weight: 500;
   text-align: left;
@@ -233,7 +238,7 @@ export const H2 = styled.h2`
 `;
 
 export const H3 = styled.h3`
-  font-family: 'Plus Jakarta Sans';
+  font-family: "Plus Jakarta Sans";
   font-size: 18px;
   font-weight: 600;
   text-align: left;

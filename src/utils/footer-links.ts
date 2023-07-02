@@ -1,4 +1,4 @@
-import { FooterColumnsModel } from "src/Models/Models";
+import { FooterColumnsModel } from "src/models/Models";
 
 export const footerColumns: FooterColumnsModel[] = [
   {

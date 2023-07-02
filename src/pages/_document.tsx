@@ -1,9 +1,18 @@
-import { Html, Head, Main, NextScript } from 'next/document';
+import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html>
+    <Html lang="pt-BR">
       <Head>
+        <title>
+          Leadster: Chatbot de Marketing para Aumentar Geração de Leads
+        </title>
+        <meta
+          name="description"
+          content="Conheça a Leadster, um Chatbot de Marketing Conversacional para Aumentar a Geração de Leads Qualificados no seu Site. Visite e saiba mais!"
+        />
+
+        <link rel="icon" href="/static/favicon.ico" sizes="any" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

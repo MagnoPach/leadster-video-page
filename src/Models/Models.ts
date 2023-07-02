@@ -21,7 +21,18 @@ export interface VideoDataModel {
   category: string;
 }
 
-export interface orderOptionsModel {
+export interface ConfigPlayerModel {
+  youtube: {
+    playerVars: {
+      autoplay: number;
+      autohide: number;
+      wmode: string;
+      origin: string;
+    };
+  };
+}
+
+export interface OrderOptionsModel {
   value: string;
   label: string;
 }
@@ -34,6 +45,15 @@ export interface FooterColumnsModel {
 export interface FooterLinksModel {
   label: string;
   url: string;
+}
+
+export interface VideoCardProps {
+  data: VideoDataModel;
+}
+
+export interface DownloadButtonProps {
+  buttonType: string;
+  file: string;
 }
 
 export interface activeButtonProps {

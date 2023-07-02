@@ -1,5 +1,5 @@
-import GlobalStyle from '../../styles/globalStyle';
-import { VideosProvider } from '../Context/VideosContext';
+import GlobalStyle from "../../styles/globalStyle";
+import { VideosProvider } from "../store/VideosContext";
 
 function MyApp({ Component, pageProps }) {
   return (

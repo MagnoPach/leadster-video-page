@@ -1,6 +1,6 @@
-import { orderOptionsModel } from "src/Models/Models";
+import { OrderOptionsModel } from "src/models/Models";
 
-export const orderOptions: orderOptionsModel[] = [
+export const orderOptions: OrderOptionsModel[] = [
   {
     value: "publishedAt",
     label: "Data de Publicação",

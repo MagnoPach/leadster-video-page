@@ -1,22 +1,10 @@
 import React, { createContext, useEffect, useState } from "react";
+import axios from "axios";
 
-import videosDataJson from "../../data.json";
-import { VideoContextProps, VideoDataModel } from "../Models/Models";
+import { VideoContextProps, VideoDataModel } from "../models/Models";
+import { initialContextValue } from "src/utils/default-values";
 
 const paginationLimit = 9;
-
-const initialContextValue = {
-  videosDisplay: [],
-  uniqueCategorys: [],
-  seletedVideoData: null,
-  setSeletedVideoData: (value: VideoDataModel) => value,
-  selectedOrder: "publishedAt",
-  setSelectedOrder: (value: string) => value,
-  currentCategory: "",
-  setCurrentCategory: (value: string) => value,
-  currentPageIndex: 0,
-  setCurrentPageIndex: (value: number) => value,
-};
 
 export const VideosContext =
   createContext<VideoContextProps>(initialContextValue);
@@ -31,9 +19,7 @@ export const VideosProvider = ({ children }) => {
   const [currentPageIndex, setCurrentPageIndex] = useState<number>(0);
 
   const videosDisplay = videosData && getVideoByFilters(videosData);
-  const uniqueCategorys = [
-    ...new Set(videosData?.map((video) => video["category"])),
-  ];
+  const uniqueCategorys = videosData && getUniqueCategorys(videosData);
 
   useEffect(() => {
     fetchData();
@@ -43,8 +29,16 @@ export const VideosProvider = ({ children }) => {
     setCurrentPageIndex(0);
   }, [currentCategory, selectedOrder]);
 
-  function fetchData(): void {
-    setVideosData(videosDataJson);
+  async function fetchData(): Promise<void> {
+    const videoDataUrl = "https://api.jsonbin.io/v3/b/64a1795e9d312622a379262a";
+
+    try {
+      const response = await axios.get(videoDataUrl);
+      const videos = response["data"]["record"];
+      setVideosData(videos);
+    } catch (error) {
+      console.error("Error fetching videos from server:", error.message);
+    }
   }
 
   function getVideoByFilters(videos: VideoDataModel[]): VideoDataModel[][] {
@@ -70,6 +64,14 @@ export const VideosProvider = ({ children }) => {
     return splitedVideoData;
   }
 
+  function getUniqueCategorys(videos: VideoDataModel[]): string[] {
+    const uniques = [...new Set(videos?.map((video) => video["category"]))];
+
+    orderList(uniques);
+
+    return uniques;
+  }
+
   function splitVideoListForPagination(
     videosList: VideoDataModel[],
     maxLength: number
@@ -82,16 +84,16 @@ export const VideosProvider = ({ children }) => {
   }
 
   function orderList(
-    videoList: VideoDataModel[],
-    param: string
-  ): VideoDataModel[] {
-    videoList.sort((a, b) => {
-      const aAtt = a[param];
-      const bAtt = b[param];
+    list: VideoDataModel[] | string[],
+    param?: string
+  ): VideoDataModel[] | string[] {
+    list.sort((a, b) => {
+      const aAtt = param ? a[param] : a;
+      const bAtt = param ? b[param] : b;
 
-      return bAtt.localeCompare(aAtt);
+      return aAtt.localeCompare(bAtt);
     });
-    return videoList;
+    return list;
   }
 
   return (

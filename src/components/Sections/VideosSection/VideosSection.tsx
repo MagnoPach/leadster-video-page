@@ -3,13 +3,13 @@ import Select from "react-select";
 
 import Filters from "../../Filters/Filters";
 import VideoCard from "../../VideoCard/VideoCard";
-import { VideosContext } from "../../../Context/VideosContext";
+import { VideosContext } from "../../../store/VideosContext";
 import {
   orderOptions,
   selectStyles,
 } from "../../../utils/react-select-options";
 import { handleDelay, handleScrollTop } from "../../../utils/util-methods";
-import { orderOptionsModel } from "src/Models/Models";
+import { OrderOptionsModel } from "src/models/Models";
 import * as S from "./styles";
 
 export default function VideosSection() {
@@ -36,7 +36,7 @@ export default function VideosSection() {
   }
 
   async function handleSetSelectedOption(
-    option: orderOptionsModel
+    option: OrderOptionsModel
   ): Promise<void> {
     handleGridFade();
     await handleDelay(200);
