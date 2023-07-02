@@ -1,6 +1,8 @@
 export interface VideoContextProps {
   videosDisplay: VideoDataModel[][];
   uniqueCategorys: string[];
+  seletedVideoData: VideoDataModel;
+  setSeletedVideoData: (value: VideoDataModel) => void;
   selectedOrder: string;
   setSelectedOrder: (value: string) => void;
   currentCategory: string;
@@ -17,6 +19,11 @@ export interface VideoDataModel {
   title: string;
   description: string;
   category: string;
+}
+
+export interface orderOptionsModel {
+  value: string;
+  label: string;
 }
 
 export interface FooterColumnsModel {

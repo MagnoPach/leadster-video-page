@@ -8,6 +8,8 @@ const paginationLimit = 9;
 const initialContextValue = {
   videosDisplay: [],
   uniqueCategorys: [],
+  seletedVideoData: null,
+  setSeletedVideoData: (value: VideoDataModel) => value,
   selectedOrder: "publishedAt",
   setSelectedOrder: (value: string) => value,
   currentCategory: "",
@@ -21,10 +23,12 @@ export const VideosContext =
 VideosContext.displayName = "";
 
 export const VideosProvider = ({ children }) => {
-  const [videosData, setVideosData] = useState([]);
-  const [selectedOrder, setSelectedOrder] = useState("publishedAt");
-  const [currentCategory, setCurrentCategory] = useState("");
-  const [currentPageIndex, setCurrentPageIndex] = useState(0);
+  const [videosData, setVideosData] = useState<VideoDataModel[]>([]);
+  const [seletedVideoData, setSeletedVideoData] =
+    useState<VideoDataModel | null>(null);
+  const [selectedOrder, setSelectedOrder] = useState<string>("publishedAt");
+  const [currentCategory, setCurrentCategory] = useState<string>("");
+  const [currentPageIndex, setCurrentPageIndex] = useState<number>(0);
 
   const videosDisplay = videosData && getVideoByFilters(videosData);
   const uniqueCategorys = [
@@ -95,6 +99,8 @@ export const VideosProvider = ({ children }) => {
       value={{
         videosDisplay,
         uniqueCategorys,
+        seletedVideoData,
+        setSeletedVideoData,
         selectedOrder,
         setSelectedOrder,
         currentCategory,

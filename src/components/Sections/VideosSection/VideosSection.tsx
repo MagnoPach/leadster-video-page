@@ -7,9 +7,9 @@ import { VideosContext } from "../../../Context/VideosContext";
 import {
   orderOptions,
   selectStyles,
-  orderOptionsModel,
 } from "../../../utils/react-select-options";
 import { handleDelay, handleScrollTop } from "../../../utils/util-methods";
+import { orderOptionsModel } from "src/Models/Models";
 import * as S from "./styles";
 
 export default function VideosSection() {

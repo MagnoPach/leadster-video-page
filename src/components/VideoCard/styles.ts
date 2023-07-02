@@ -29,20 +29,20 @@ export const Container = styled.button`
     .title {
       font-size: 14px;
     }
-  }
 
-  &:hover {
-    .play-overlay {
-      opacity: 1;
-      filter: opacity(0.4);
-    }
+    &:hover {
+      .play-overlay {
+        opacity: 1;
+        filter: opacity(0.4);
+      }
 
-    .play-container {
-      opacity: 1;
-    }
+      .play-container {
+        opacity: 1;
+      }
 
-    .title {
-      color: #2c83fb;
+      .title {
+        color: #2c83fb;
+      }
     }
   }
 `;
