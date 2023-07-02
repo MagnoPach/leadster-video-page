@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import linkedin from "../../../public/linkedin.svg";
-import facebook from "../../../public/facebook.svg";
-import instagram from "../../../public/instagram.svg";
+import linkedin from "/public/linkedin.svg";
+import facebook from "/public/facebook.svg";
+import instagram from "/public/instagram.svg";
 
 import * as S from "./styles";
 
