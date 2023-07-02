@@ -55,6 +55,11 @@ export interface DownloadButtonProps {
   buttonType: string;
 }
 
+export interface DownloadButtonStyleProps {
+  $bgColor: string;
+  $textColor?: string;
+}
+
 export interface activeButtonProps {
   $isactive: string;
 }

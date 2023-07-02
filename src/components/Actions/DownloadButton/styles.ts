@@ -1,10 +1,6 @@
 "use client";
+import { DownloadButtonStyleProps } from "../../../../src/models/Models";
 import styled from "styled-components";
-
-interface DownloadButtonStyleProps {
-  $bgColor: string;
-  $textColor?: string;
-}
 
 export const ButtonContainer = styled("div")<DownloadButtonStyleProps>`
   width: fit-content;
