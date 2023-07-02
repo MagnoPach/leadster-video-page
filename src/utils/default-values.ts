@@ -1,4 +1,4 @@
-import { VideoDataModel, ConfigPlayerModel } from "src/models/Models";
+import { VideoDataModel, ConfigPlayerModel } from "src/models/Interfaces";
 
 export const initialContextValue = {
   videosDisplay: [],

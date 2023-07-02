@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 import LogoGif from "../../../public/leadster_270.gif";
 
-import SocialLinks from "../SocialLinks/SocialLinks";
+import SocialLinks from "../Actions/SocialLinks/SocialLinks";
 import { footerColumns } from "src/utils/footer-links";
-import { FooterColumnsModel, FooterLinksModel } from "src/models/Models";
+import { FooterColumnsModel, FooterLinksModel } from "src/models/Interfaces";
 import * as S from "./styles";
 
 export default function Footer() {

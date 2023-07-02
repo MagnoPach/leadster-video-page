@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import axios from "axios";
 
-import { VideoContextProps, VideoDataModel } from "../models/Models";
+import { VideoContextProps, VideoDataModel } from "../models/Interfaces";
 import { initialContextValue } from "src/utils/default-values";
 
 const paginationLimit = 9;

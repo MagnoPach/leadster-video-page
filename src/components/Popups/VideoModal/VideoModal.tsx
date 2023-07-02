@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import ReactPlayer from "react-player";
 import { X } from "phosphor-react";
 
-// import DownloadButton from "src/components/Actions/DownloadButton/DownloadButton";
+import DownloadButton from "../../Actions/DownloadButton/DownloadButton";
 import { VideosContext } from "../../../store/VideosContext";
 import { playerConfig } from "src/utils/default-values";
 import * as S from "./styles";
@@ -55,11 +55,11 @@ export default function VideoModal() {
                 : "Video sem descrição adicionada."}
             </S.Text>
             <S.FooterTitle>Download</S.FooterTitle>
-            {/* <S.Downloads>
+            <S.Downloads>
               <DownloadButton buttonType="spread_sheet" />
               <DownloadButton buttonType="document" />
               <DownloadButton buttonType="presentation" />
-            </S.Downloads> */}
+            </S.Downloads>
           </S.Footer>
         </S.Modal>
       </S.ContainerWrapper>

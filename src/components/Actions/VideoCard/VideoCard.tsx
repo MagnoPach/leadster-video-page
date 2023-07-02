@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Play } from "phosphor-react";
 
 import { VideosContext } from "src/store/VideosContext";
-import { VideoCardProps } from "src/models/Models";
+import { VideoCardProps } from "src/models/Interfaces";
 import * as S from "./styles";
 
 export default function VideoCard({ data }: VideoCardProps) {

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { activeButtonProps } from "../../models/Models";
+import { activeButtonProps } from "../../../models/Interfaces";
 
 export const Container = styled.div`
   width: 100%;

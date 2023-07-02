@@ -1,4 +1,4 @@
-import { OrderOptionsModel } from "src/models/Models";
+import { OrderOptionsModel } from "src/models/Interfaces";
 
 export const orderOptions: OrderOptionsModel[] = [
   {
