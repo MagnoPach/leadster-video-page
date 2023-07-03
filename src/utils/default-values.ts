@@ -50,3 +50,5 @@ export const playerConfig: ConfigPlayerModel = {
     },
   },
 };
+
+export const paginationLimit = 9;
